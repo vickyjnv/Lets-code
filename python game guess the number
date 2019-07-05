@@ -1,0 +1,32 @@
+import random
+ 
+n = random.randrange(1, 11)
+count=0
+
+
+print('I\'ve though a number between 1 and 10!')
+ 
+while True:
+    try:
+        g = input('Guess Any Number!')
+        g = int(g)
+        if not 10>g>0:
+            if count==6:
+                print ("You Loose")
+                
+                print('It\'s in between 0 and 10!')
+    except ValueError:
+        print('Enter an integer')
+        continue
+ 
+    if g == n:
+        print('Congratulations You Gussed That Number!')
+        break
+    
+ 
+    if g < n:
+        print('Larger Than The Guessed One')
+ 
+    if g > n:
+        print('Smaller Than The Guessed One')
+        count +=1
